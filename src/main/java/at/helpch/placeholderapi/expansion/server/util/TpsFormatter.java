@@ -31,8 +31,8 @@ public class TpsFormatter {
      * @return tps rounded
      */
     private @NotNull String round(final double tps) {
-        final double finalTps = Math.min(Math.round(tps), 20.0);
-        return (tps > 20.0 ? "*" : "") + finalTps;
+        final long finalTps = Math.min(Math.round(tps), 20);
+        return String.valueOf(finalTps);
     }
 
     /**
@@ -47,7 +47,7 @@ public class TpsFormatter {
 
     private @NotNull String getPercent(final double tps) {
         final double percent = Math.min(Math.round(100 / 20.0 * tps), 100.0);
-        return (tps > 20.0 ? "*" : "") + percent + '%';
+        return percent + '%';
     }
 
     private @NotNull String getColoredTps(final double tps) {
